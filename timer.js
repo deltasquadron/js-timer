@@ -13,7 +13,11 @@ function beginCountdown() {
         secs--;
         document.getElementById("timer").innerHTML = currentMinutes + ":" + currentSeconds;
         if (secs !== -1) setTimeout(Decrement ,1000);
-        var audio = new Audio('/Blop-Mark_DiAngelo-79054334.mp3');
-        if (currentMinutes <= 0 && currentSeconds <= 0) audio.play();
+        // var audio = new Audio('/Blop-Mark_DiAngelo-79054334.mp3');
+        // if (currentMinutes <= 0 && currentSeconds <= 0) audio.play();
+        var sound = new Howl({
+            src: ['/Blop-Mark_DiAngelo-79054334.mp3']
+          });
+        if (currentMinutes <= 0 && currentSeconds <= 0) sound.play();
     }
   }
